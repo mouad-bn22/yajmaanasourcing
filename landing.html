@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل خياطة الملابس الجزائر</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9963A;
+  --gold-light: #E8B84B;
+  --gold-pale: #FDF3E3;
+  --dark: #0F0E0B;
+  --dark2: #1A1814;
+  --dark3: #252219;
+  --cream: #FAF6EF;
+  --text-muted: #8A7F6E;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,150,58,0.04) 40px, rgba(201,150,58,0.04) 41px),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(201,150,58,0.04) 40px, rgba(201,150,58,0.04) 41px);
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,150,58,0.15) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,150,58,0.15);
+  border: 1px solid rgba(201,150,58,0.4);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+.hero h1 {
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--gold);
+  display: block;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+
+.hero-stat strong {
+  display: block;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.hero-stat span {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.cta-wrap {
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 16px 48px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover::after { transform: translateX(0); }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,150,58,0.35); }
+
+.price-tag {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.price-tag strong { color: var(--gold-light); font-size: 1.4rem; }
+
+/* ===== SECTION BASE ===== */
+section { padding: 80px 1.5rem; }
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ===== PROBLEM ===== */
+.problem { background: var(--dark2); }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.problem-card {
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 3px; height: 100%;
+  background: rgba(201,150,58,0.3);
+}
+
+.problem-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+.problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.problem-card p { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* ===== WHAT'S INSIDE ===== */
+.inside { background: var(--dark); }
+
+.inside-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.inside-card {
+  background: var(--dark2);
+  border: 1px solid rgba(201,150,58,0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.inside-card:hover {
+  border-color: rgba(201,150,58,0.4);
+  transform: translateY(-4px);
+}
+
+.inside-count {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.inside-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.inside-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inside-card ul li {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  padding-right: 1.2rem;
+  position: relative;
+}
+
+.inside-card ul li::before {
+  content: '✓';
+  position: absolute;
+  right: 0;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+/* ===== NUMBERS ===== */
+.numbers { background: var(--gold); }
+
+.numbers .section-title { color: var(--dark); }
+.numbers .section-label { color: rgba(0,0,0,0.5); }
+.numbers .section-sub { color: rgba(0,0,0,0.6); }
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.number-item { text-align: center; }
+
+.number-item strong {
+  display: block;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.number-item span {
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.6);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* ===== FOR WHO ===== */
+.forwho { background: var(--dark2); }
+
+.forwho-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.forwho-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--dark3);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.forwho-check {
+  width: 28px; height: 28px;
+  background: rgba(201,150,58,0.15);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.forwho-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.forwho-item p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ===== PRICING ===== */
+.pricing { background: var(--dark); text-align: center; }
+
+.price-box {
+  max-width: 480px;
+  margin: 3rem auto 0;
+  background: var(--dark2);
+  border: 1px solid rgba(201,150,58,0.3);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.price-old {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.price-main {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.price-currency { font-size: 1.5rem; }
+.price-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 2rem; }
+
+.price-includes {
+  text-align: right;
+  list-style: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.price-includes li {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.price-includes li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cta-btn-lg {
+  display: block;
+  width: 100%;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.25s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-btn-lg:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201,150,58,0.3);
+}
+
+.guarantee {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ===== FAQ ===== */
+.faq { background: var(--dark2); }
+
+.faq-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.faq-item {
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: right;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-q .arrow {
+  color: var(--gold);
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .arrow { transform: rotate(45deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  padding: 0 1.5rem;
+}
+
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ===== VIDEO ===== */
+.video-section { background: var(--dark2); padding: 70px 1.5rem; }
+.video-wrap {
+  max-width: 720px; margin: 2.5rem auto 0;
+  position: relative; border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(201,150,58,0.2); background: var(--dark3);
+  aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.video-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+  background: linear-gradient(135deg, var(--dark3) 0%, #1e1a10 100%);
+}
+.play-btn {
+  width: 72px; height: 72px; background: var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.video-wrap:hover .play-btn { transform: scale(1.1); box-shadow: 0 0 40px rgba(201,150,58,0.4); }
+.video-placeholder p { font-size: 0.9rem; color: rgba(255,255,255,0.4); }
+.video-note { text-align: center; margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+/* ===== WILAYAS ===== */
+.wilayas { background: var(--dark3); }
+.wilayas-intro {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: rgba(201,150,58,0.08); border: 1px solid rgba(201,150,58,0.2);
+  border-radius: 8px; padding: 1rem 1.25rem;
+  margin-top: 2rem; margin-bottom: 2.5rem;
+  font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;
+}
+.wilayas-intro .ico { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.wilayas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 0.75rem; }
+.wilaya-chip {
+  background: var(--dark2); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px; padding: 0.9rem 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: border-color 0.2s;
+}
+.wilaya-chip:hover { border-color: rgba(201,150,58,0.3); }
+.wilaya-name { font-size: 0.9rem; font-weight: 600; }
+.wilaya-count {
+  font-family: 'Tajawal', sans-serif; font-weight: 800; font-size: 1rem;
+  color: var(--gold); background: rgba(201,150,58,0.1); padding: 2px 10px; border-radius: 20px;
+}
+.wilayas-footer { margin-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+.wilayas-footer strong { color: var(--gold-light); }
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero-stats { gap: 1.5rem; }
+  .price-main { font-size: 3rem; }
+}
+
+/* ===== ORDER FORM ===== */
+.order-form { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+.order-form input, .order-form select {
+  width: 100%; padding: 12px 14px;
+  background: var(--dark3); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px; color: var(--white);
+  font-family: 'Cairo', sans-serif; font-size: 0.95rem;
+  outline: none; transition: border-color 0.2s;
+  text-align: right;
+}
+.order-form input::placeholder { color: rgba(255,255,255,0.3); }
+.order-form input:focus, .order-form select:focus { border-color: var(--gold); }
+.order-form select option { background: var(--dark3); color: var(--white); }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇩🇿 خاص بالسوق الجزائري</div>
+    <h1>ابدأ مشروعك في الخياطة <span>بدون تضييع الوقت</span></h1>
+    <p>أكبر دليل سورسينغ متخصص للخياطة في الجزائر — ورشات، موردين قماش، لوازم، وتغليف — كل ما تحتاجه في مكان واحد.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>400+</strong><span>ورشة خياطة</span></div>
+      <div class="hero-stat"><strong>70+</strong><span>مورد قماش</span></div>
+      <div class="hero-stat"><strong>21+</strong><span>مورد تغليف</span></div>
+      <div class="hero-stat"><strong>39</strong><span>ولاية مغطاة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section reveal">
+  <div class="container" style="text-align:center;">
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/kjeV7Dr7ftY?rel=0&showinfo=0" allowfullscreen allow="autoplay"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- WILAYAS -->
+<section class="wilayas reveal">
+  <div class="container">
+    <div class="section-label">الولايات</div>
+    <h2 class="section-title">الدليل يغطي ولايتك؟</h2>
+    <div class="wilayas-intro">
+      <span class="ico">💡</span>
+      <span>الولايات اللي فيها <strong>3 ورشات فأقل</strong> ما هيش في الجدول — هذا يخليك تعرف قبل ما تشري. الولايات الكبيرة فيها خيارات كثيرة وتقادر تختار الأنسب ليك.</span>
+    </div>
+    <div class="wilayas-grid">
+      <div class="wilaya-chip"><span class="wilaya-name">الجزائر العاصمة</span><span class="wilaya-count">105</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">وهران</span><span class="wilaya-count">28</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">البليدة</span><span class="wilaya-count">17</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">بومرداس</span><span class="wilaya-count">17</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">قسنطينة</span><span class="wilaya-count">16</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">باتنة</span><span class="wilaya-count">15</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">المدية</span><span class="wilaya-count">13</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">سطيف</span><span class="wilaya-count">12</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">تيبازة</span><span class="wilaya-count">10</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">تلمسان</span><span class="wilaya-count">10</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">ميلة</span><span class="wilaya-count">9</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">البويرة</span><span class="wilaya-count">8</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">سكيكدة</span><span class="wilaya-count">8</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">خنشلة</span><span class="wilaya-count">7</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">أم البواقي</span><span class="wilaya-count">7</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">تيزي وزو</span><span class="wilaya-count">7</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">بجاية</span><span class="wilaya-count">7</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">المسيلة</span><span class="wilaya-count">7</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">عنابة</span><span class="wilaya-count">6</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">قالمة</span><span class="wilaya-count">6</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">برج بوعريريج</span><span class="wilaya-count">6</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">الشلف</span><span class="wilaya-count">6</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">بسكرة</span><span class="wilaya-count">6</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">جيجل</span><span class="wilaya-count">5</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">سيدي بلعباس</span><span class="wilaya-count">5</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">مستغانم</span><span class="wilaya-count">4</span></div>
+      <div class="wilaya-chip"><span class="wilaya-name">تيارت</span><span class="wilaya-count">4</span></div>
+    </div>
+    <div class="wilayas-footer">
+      الولايات اللي فيها 3 ورشات فأقل مش موجودة في هذا الجدول —
+      <strong>إذا ما لقيتيش ولايتك هنا، اتواصل معنا قبل الشراء.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing reveal" id="pricing">
+  <div class="container">
+    <div class="section-label">السعر</div>
+    <h2 class="section-title">استثمار صغير، نتيجة كبيرة</h2>
+    <p class="section-sub" style="margin: 0 auto;">فكر فيه: ورشة واحدة تلقاها في الدليل تخلص سعره 10 مرات.</p>
+
+    <div class="price-box">
+      <div class="price-old">سعر أصلي: 7.500 دج</div>
+      <div class="price-main"><span class="price-currency">دج</span> 3.700</div>
+      <div class="price-note">دفع مرة واحدة — وصول فوري</div>
+      <ul class="price-includes">
+        <li>دليل 400+ ورشة خياطة مرتبة بالولاية</li>
+        <li>دليل 70+ مورد قماش ولوازم خياطة</li>
+        <li>دليل 21+ مورد أومبلاج وباكاجينغ</li>
+        <li>تحديثات مجانية لمدة 6 أشهر</li>
+        <li>ملف Excel قابل للبحث والفلترة</li>
+      </ul>
+
+      <div class="order-form">
+        <input type="text" id="f-name" placeholder="الاسم الكامل" />
+        <input type="tel" id="f-phone" placeholder="رقم الواتساب (مثال: 0612345678)" />
+        <select id="f-wilaya">
+          <option value="" disabled selected>اختر ولايتك</option>
+          <option>الجزائر العاصمة</option><option>وهران</option><option>قسنطينة</option>
+          <option>عنابة</option><option>باتنة</option><option>البليدة</option>
+          <option>سطيف</option><option>تلمسان</option><option>بومرداس</option>
+          <option>تيبازة</option><option>ميلة</option><option>البويرة</option>
+          <option>سكيكدة</option><option>خنشلة</option><option>أم البواقي</option>
+          <option>تيزي وزو</option><option>بجاية</option><option>المسيلة</option>
+          <option>قالمة</option><option>برج بوعريريج</option><option>الشلف</option>
+          <option>بسكرة</option><option>جيجل</option><option>سيدي بلعباس</option>
+          <option>مستغانم</option><option>تيارت</option><option>المدية</option>
+          <option>سوق أهراس</option><option>الوادي</option><option>ورقلة</option>
+          <option>عين الدفلى</option><option>تبسة</option><option>غليزان</option>
+          <option>غرداية</option><option>بشار</option><option>الأغواط</option>
+          <option>الجلفة</option><option>النعامة</option><option>عين تموشنت</option>
+          <option>ولاية أخرى</option>
+        </select>
+        <button onclick="sendToWhatsApp()" class="cta-btn-lg">اطلب الدليل الآن — 3.700 دج ⬅</button>
+      </div>
+      <div class="guarantee">سيتم تحويلك مباشرة لواتساب لإتمام الطلب والدفع</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 دليل سورسينغ الخياطة الجزائري — جميع الحقوق محفوظة</p>
+  <p style="margin-top: 0.5rem;">للتواصل والطلب: واتساب</p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => obs.observe(r));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href="#pricing"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+function sendToWhatsApp() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const wilaya = document.getElementById('f-wilaya').value;
+  if (!name || !phone || !wilaya) {
+    alert('من فضلك أكمل كل الحقول قبل الإرسال');
+    return;
+  }
+  const msg = encodeURIComponent(
+    'السلام عليكم، أنا ' + name + ' من ' + wilaya + '\n' +
+    'رقم الواتساب: ' + phone + '\n' +
+    'أريد الحصول على دليل السورسينغ بسعر 3700 دج'
+  );
+  window.open('https://wa.me/213658682986?text=' + msg, '_blank');
+}
+
+</script>
+</body>
+</html>
